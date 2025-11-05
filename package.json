@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "version": "1.0.0",
+  "dependencies": {
+    "gsap": "^3.12.5"
+  },
+  "description": "> Scriptor is a simple, minimal, clean & responsive Jekyll theme for writers.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "copy-gsap": "cp ./node_modules/gsap/dist/gsap.min.js ./assets/js/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme/issues"
+  },
+  "homepage": "https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme#readme",
+  "devDependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}

@@ -3,7 +3,7 @@
    ========================================================================== */
 
 .pagination {
-  border-bottom: 1px solid _palette(border);
+  // border-bottom: 1px solid _palette(border);
   color: _palette(primary);
   font-weight: bold;
   padding: 2.22222em 0 3.33333em;
@@ -18,6 +18,7 @@
   display: block;
   font-size: 14px;
   line-height: 1.5;
+  color: _palette(secondary);
 }
 
 .older-posts,
@@ -35,7 +36,7 @@
   margin-bottom: 0.5rem;
 }
 
-@media only screen and (min-width: 481px) {
+@media only screen and (min-width: $mobile-size-small) {
   .older-posts,
   .newer-posts {
     margin: 0;

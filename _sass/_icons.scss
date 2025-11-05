@@ -12,6 +12,39 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Volterra';
+  src:
+    url('../fonts/Volterra-Regular.otf?471qre') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src:
+    url('../fonts/Oswald-VariableFont_wght.ttf?471qre') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src:
+    url('../fonts/Lato-Regular.ttf?471qre') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Aller-Light';
+  src:
+    url('../fonts/Aller_Std_Lt.ttf?471qre') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 [class^="fa-"], [class*=" fa-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'FontAwesome' !important;

@@ -1,0 +1,21 @@
+---
+layout: default
+---
+
+<main class="main-content fadeInDown delay_025s">
+  <article class="post" id="left_graphic_size">
+    <div class="inner">
+      <header class="post-header">
+        <h1 class="error-big-text">{{page.title}}</h1>
+        {% if page.feature_image and page.feature_image != "" %}
+        <figure class="post-thumbnail image-card width-wide author-img">
+          <img src="{{ page.feature_image | relative_url }}" alt="{{ page.title }}">
+        </figure><!-- .post-thumbnail -->
+        {% endif %}
+      </header><!-- .post-header -->
+      <div class="error-description">
+        {{content}}
+      </div><!-- .post-content -->
+    </div>
+  </article><!-- .post -->
+</main><!-- .site-main -->

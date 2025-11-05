@@ -1,0 +1,47 @@
+---
+layout: default
+---
+
+{% if page._styles %}
+  <!-- Page/Post style -->
+  <style type="text/css">
+    {{ page._styles }}
+  </style>
+{% endif %}
+
+<main class="main-content fadeInDown delay_025s" style="flex-grow: 1000;" id="left_graphic_size">
+  <div class="left-graphic">
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="100%">
+    </svg>
+  </div>
+
+  <article class="post">
+    <header class="post-header">
+        <!--
+      <figure class="post-thumbnail image-card width-wide first-post-fig-offset">
+        <img src="{{ page.feature_image | relative_url }}" alt="{{ page.title }}" class="first-post-img">
+      </figure>-->
+      <div class="inner">
+        <div class="title-icon-container">
+          <h2 class="post-title">{{page.title}}</h1>
+        </div>
+      </div>
+    </header><!-- .post-header -->
+    <div class="inner">
+      <div class="post-content">
+        {{content}}
+      </div><!-- .post-content -->
+    </div>
+  </article><!-- .post -->
+
+  {% if page.related_publications %}
+    <h2>References</h2>
+    <div class="publications">
+      {% bibliography --cited_in_order %}
+    </div>
+  {% endif %}
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script type="module" src="{{site.baseurl}}/assets/js/ar_graphic.js" crossorigin="anonymous"></script>
+
+</main><!-- .main-content -->

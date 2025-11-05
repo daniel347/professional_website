@@ -9,10 +9,10 @@
 lang: en-US
 
 # Site title
-title: "Scriptor"
+title: "Daniel Siromani"
 
 # A description of your site for meta tag, search engine results.
-description: "Scriptor is a minimal, clean, modern & responsive Jekyll theme for writers"
+description: "Machine Learning, Software, Electronics and other projects & things which have taken my fancy"
 
 # The subpath of your site, e.g. /blog, for generating urls.
 baseurl: ""
@@ -30,25 +30,19 @@ google_analytics: ""
 navigation:
   - text: Home
     url: /
-  - text: About
-    url: /about/
-  - text: Style Guide
-    url: /style-guide/
-  - text: Tags
-    url: /tags/
-  - text: Download
-    url: https://github.com/JustGoodThemes/Scriptor-Jekyll-Theme
+  - text: Publications
+    url: /publications
 
 # The shortname for your Disqus site to enable comments.
-disqus: justgoodthemes
+disqus:
 
 # Colors
 accent_color: '#2d72d9'
 
 # Site footer
 footer:
-  content: "&copy; Scriptor all rights reserved. Theme by [JustGoodThemes](https://www.justgoodthemes.com)."
-  has_social: true
+  content: "Theme modified from Scriptor by JustGoodThemes"
+  has_social: false
 
 # Plugins
 plugins:
@@ -57,6 +51,9 @@ plugins:
 # http://jekyllrb.com/docs/pagination/
 paginate: 3
 paginate_path: '/page:num/'
+
+gems:
+  - jekyll-scholar
 
 
 # Permalinks
@@ -69,3 +66,10 @@ markdown: kramdown
 sass:
   sass_dir: _sass
   style: compressed
+
+scholar:
+  style: ieee
+  bibliography_template: bib2
+  bibliography_list_tag: "ul"
+  #bibliography_list_tag: 'div'
+  #bibliography_item_tag: 'p'

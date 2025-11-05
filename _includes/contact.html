@@ -1,0 +1,10 @@
+{% for link in site.data.contact.links %}
+<a href="{{ link.url }}" target="_blank" rel="noopener">
+  <div class="contact-flex">
+    <span class="{{ link.icon }}" aria-hidden="true"></span>
+    <span class="screen-reader-text">{{ link.title }}</span>
+    <div class="contact-title">{{link.title}}</div>
+  </div>
+
+</a>
+{% endfor %}

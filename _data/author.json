@@ -1,7 +1,14 @@
 {
-  "name": "John Doe",
-  "bio": "John is a designer, photographer, speaker, author of a couple of books about typography and the founder of photo magazine Curious.",
-  "url": "https://justgoodthemes.com",
-  "location": "Vilnius, Lithuania",
-  "image": "images/author.png"
+  "name": "Daniel Siromani",
+  "bio": "generative AI PhD researcher",
+  "location": "London, UK",
+  "image": "images/author.jpg",
+
+  "longBio": "I am a PhD student at Imperial College London Communications and Signal Processing group, under the supervision of Prof. Pier Luigi Dragotti. Prior to this I obtained a BA (first class) and MEng (distinction) at Jesus College, Cambridge, specialising in Information Engineering. My MEng research project investigated the use of deep learning in ECG processing and arrhithmia detection. My current research focuses on generative diffusion modelling. In particular I am interested in methods of solving inverse problems using diffusion models, and also extensions of diffusion to multiple image modalities.",
+  "news": [
+    {
+      "date": "2025-09-04",
+      "content": "I'm pleased to announce our work titled 'Multi-Modal Latent Diffusion using Information Disentangling Autoencoders' has been accepted into CAMSAP 2025. We look forward to attending the conference in December!"
+    }
+  ]
 }

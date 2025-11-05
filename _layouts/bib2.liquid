@@ -1,0 +1,26 @@
+---
+---
+<script>
+    var bibtexEntry = {{ entry.bibtex | jsonify }};
+</script>
+
+
+<h5 class="ref-title">{{ entry.title }}</h5>
+
+{% if site.scholar.style == "ieee" %}
+    {% comment %}
+    This is a hack to remove the reference number from the entry in
+    case 'ieee' style is used to format the reference.
+
+    The <span> is repaired by splitting on both the [ and the ] sign.
+    {% endcomment %}
+    {%assign ref = reference | split: "]" %}
+    {%assign pre_num = ref[0] | split:"[" %}
+    {% for item in pre_num limit:1 %}{{item}}{% endfor %}{% for item in ref offset:1 %}{% if forloop.first == false %}]{% endif %}{{item}}{% endfor %}
+{% else %}
+    {{reference}}
+{% endif %}
+
+<a class="ref-bibtex-button" onclick='navigator.clipboard.writeText({{ entry.bibtex | jsonify }})'>bibtex</a>
+<a class="ref-bibtex-button" onclick='window.open({{ entry.url | jsonify}}, "_blank")'>paper</a>
+

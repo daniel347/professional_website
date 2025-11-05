@@ -2,50 +2,60 @@
 layout: default
 ---
 
-<main class="main-content fadeInDown delay_075s">
+<!--          <a href="{{site.baseurl}}{{post.url}}"><img src="{{ post.feature_image | relative_url }}"
+              alt="{{ post.title }}"></a>
+-->
 
-  {% for post in paginator.posts %}
-  <article class="post">
-    <header class="post-header">
-      <time class="post-date" datetime="{{ post.date | date: "%Y-%m-%d" }}">{{post.date | date: "%B %-d, %Y" }}</time>
-      <h2 class="post-title"><a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">{{post.title}}</a></h2>
-      <div class="post-meta">
-        By <span class="post-author">{{ site.data.author.name }}</span>{% if post.tags.size > 0 %}<span
-          class="post-tags"> in
-          {% for tag in post.tags %}<a href="{{ site.baseurl }}/tags/#{{ tag | cgi_escape }}" rel="tag">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</span>{% endif %}
-      </div><!-- .post-meta -->
-      {% if post.feature_image and post.feature_image != "" %}
-      <figure class="post-thumbnail image-card width-wide">
-        <a href="{{site.baseurl}}{{post.url}}"><img src="{{ post.feature_image | relative_url }}"
-            alt="{{ post.title }}"></a>
-      </figure><!-- .post-thumbnail -->
-      {% endif %}
-    </header><!-- .post-header -->
-    <div class="post-content">
-      {% if post.content contains '<!--more-->' %}
-      {{ post.content | split:'<!--more-->' | first }}
-      <p class="read-more"><a href="{{ site.baseurl }}{{ post.url }}" class="read-more-link">Continue reading &rarr;</a>
-      </p>
-      {% else %}
-      {{ post.content }}
-      {% endif %}
-    </div><!-- .post-content -->
+<main class="main-content fadeInDown delay_025s" style="flex-grow: 1000;" id="left_graphic_size">
+  <div class="left-graphic">
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="100%">
+    </svg>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+  <script type="module" src="{{site.baseurl}}/assets/js/ar_graphic.js" crossorigin="anonymous"></script>
+
+  <article class="about">
+    <div class="author-inner">
+      <div class="author-box">
+        {% if site.data.author.image and site.data.author.image != "" %}
+        <div class="author-avatar-box">
+          <div class="author-avatar" style="background-image: url('{{ site.data.author.image }}')">
+            <span class="screen-reader-text">{{ site.data.author.name }}'s Picture</span>
+          </div>
+          {% include contact.html %}
+        </div>
+        {% endif %}
+        <div class="author-details">
+          <div class="author-bio">
+            <h1>About Me</h1>
+            <p class="long-bio"
+              {{ site.data.author.longBio | markdownify }}
+            <p>
+          </div>
+          {% if site.data.author.bio != "" %}
+          <span class="author-location">{{site.data.author.name}} - {{site.data.author.bio}}</span>
+          {% endif %}
+          {% if site.data.author.location and site.data.author.location != "" %}
+          <span class="author-location">{{ site.data.author.location}}</span>
+          {% endif %}
+          {% if site.data.author.url and site.data.author.url != "" %}
+          <span class="author-website"><a href="{{ site.data.author.url }}" target="_blank" rel="noopener">{{ site.data.author.url }}</a></span>
+          {% endif %}
+          <h1 class="author-title">News</h1>
+          {% if site.data.author.news.size > 0 %}
+            <div class="news-list">
+              {% for item in site.data.author.news %}
+                <div class="news-item">
+                  <span class="news-date" style="margin-botton: 0rem">{{ item.date }}</span>
+                  <span class="news-content">{{ item.content | markdownify }}</span>
+                </div>
+              {% endfor %}
+            </div>
+          {% else %}
+            <p class="author-location">No news at the moment, but please check back soon!</p>
+          {% endif %}
+        </div><!-- .author-details -->
+      </div>
+    </div><!-- .inner -->
   </article><!-- .post -->
-  {% endfor %}
-
-  {% if paginator.total_pages > 1 %}
-  <nav class="pagination">
-    <h2 class="screen-reader-text">Posts navigation</h2>
-    <div class="nav-links">
-      {% if paginator.previous_page %}
-      <a href="{{ paginator.previous_page_path | relative_url }}" class="newer-posts">&larr; Newer Posts</a>
-      {% endif %}
-      <span class="page-number">Page {{ paginator.page }} of {{ paginator.total_pages }}</span>
-      {% if paginator.next_page %}
-      <a href="{{ paginator.next_page_path | relative_url }}" class="older-posts">Older Posts &rarr;</a>
-      {% endif %}
-    </div>
-  </nav><!-- .pagination -->
-  {% endif %}
-
 </main><!-- .site-main -->

@@ -25,20 +25,62 @@
 
 // Font.
 $font: (
-  primary: ("Lato","Helvetica Neue",Helvetica,sans-serif),
-  secondary: ("Noto Serif",Georgia,serif)
+  primary: ("Inter", "Garamond", "Helvetica"),
+  secondary: ("raleway", "ubuntu", "Aller-Light"),
+  title: ("raleway", "ubuntu", "Garamond"),
 );
 
 // Palette.
-{% assign accent = site.accent_color | default: '#2d72d9' %}
-$palette: (
-  accent:    {{ accent }},
-  primary:   #6b747a,
-  secondary: #2c343c,
-  meta:      #9ba6ad,
-  border:    #d7d7d7,
-  bg:        #fbfbfb
+{% assign accent = site.accent_color | default: '#f1c40f' %}
+
+$themes: (
+    light: (
+        accent:  #475bca, // #343b83, // {{ accent }}, #f1c40f
+        accent-hover:  #f5b626, // #f1c40f,
+        accent-light: #697ec3, // {{ accent }},  #f2e160
+        primary: #2b2b45,
+        secondary: #52484e, // #b8adb4
+        tertiary: #ffffff, // #b7adb4,
+        meta:      #52484e,  // #b8adb4
+        main-text: #0f0f0f,  // #ffffff
+        border:    #b7adb4,
+        bg:       #dddee3,  // #162232,
+        nav-text: #52484e,
+    ),
+    dark: (
+        accent:  #f1c40f, // {{ accent }},
+        accent-hover:   #f1c40f,
+        accent-light: #f2e160, // {{ accent }},
+        primary: #2b2b45,
+        secondary: #b8adb4,
+        tertiary: #000000,
+        meta:      #b8adb4,
+        main-text: #ffffff,
+        border:    #d7d7d7,
+        bg:        #162232,
+        nav-text: #ffffff,
+    )
 );
+
+@function _palette($key) {
+  @return map-get(map-get($themes, "light"), $key);
+}
+
+/*
+$palette: (
+  accent:   #343b83, // {{ accent }}, #f1c40f
+  accent-hover:   #f1c40f,
+  accent-light: #697ec3, // {{ accent }},  #f2e160
+  primary: #2b2b45,
+  secondary: #52484e, // #b8adb4
+  tertiary: #b7adb4,
+  meta:      #52484e,  // #b8adb4
+  main-text: #0f0f0f,  // #ffffff
+  border:    #b7adb4,
+  bg:       #ffffff  // #162232
+);
+*/
+
 
 // Imports
 @import "functions";
@@ -53,3 +95,8 @@ $palette: (
 @import "site-footer";
 @import "animations";
 @import "prism";
+
+ul
+{
+    list-style-type: none;
+}
