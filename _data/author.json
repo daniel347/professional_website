@@ -4,7 +4,7 @@
   "location": "London, UK",
   "image": "images/author.jpg",
 
-  "longBio": "I am a PhD student at Imperial College London Communications and Signal Processing group, under the supervision of Prof. Pier Luigi Dragotti. Prior to this I obtained a BA (First-Class Honours) and MEng (Distinction) at Jesus College, Cambridge, specialising in Information Engineering. My MEng research project investigated the use of deep learning in ECG processing and arrhythmia detection. My current research focuses on generative diffusion modelling. In particular, I am interested in methods of solving inverse problems using diffusion models and also extensions of diffusion to multiple image modalities.",
+  "longBio": "I am a PhD student within the Communications and Signal Processing group at Imperial College London, under the supervision of Prof. Pier Luigi Dragotti. Prior to this I obtained a BA (First-Class Honours) and MEng (Distinction) at Jesus College, Cambridge, specialising in Information Engineering. My MEng research project investigated the use of deep learning in ECG processing and arrhythmia detection. My current research focuses on generative diffusion modelling. In particular, I am interested in methods of solving inverse problems using diffusion models and also extensions of diffusion to multiple image modalities.",
   "news": [
     {
       "date": "2025-09-04",
